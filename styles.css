@@ -12,187 +12,189 @@ FOOTER GREY - #818181
 
 */
 
-body{
-    padding: 0;
-    margin: 0;
-    background-color: #141414;
-    font-family: "Open Sans", sans-serif;
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #141414;
+  font-family: "Open Sans", sans-serif;
 }
 
 a {
-    color: #c2c2c2;
+  color: #c2c2c2;
 }
 
 a:hover {
-    color: #f3f3f3;
+  color: #f3f3f3;
 }
 
 /* Navbar Styling */
 
 .navbar {
-    height: 58px;
+  height: 58px;
 }
 
 .darkGreyBG {
-    background-color: #080808;
+  background-color: #080808;
 }
 
 .offWhiteTxt {
-    color: #f3f3f3;
+  color: #f3f3f3;
 }
 
 .logo {
-    height: 34px;
+  height: 34px;
 }
 
 .dropdown-menu {
-    background-color: #080808;
-    border-radius: 0px;
-    margin-left: -60px;
+  background-color: #080808;
+  border-radius: 0px;
+  margin-left: -60px;
 }
 
 .dropdown-item {
-    color: #f3f3f3;
-    font-size: 12px;
-    line-height: 32px;
+  color: #f3f3f3;
+  font-size: 12px;
+  line-height: 32px;
 }
 
 .dropdown-item:hover {
-    background-color: #080808;
-    color: #c2c2c2;
-    text-decoration: underline;
+  background-color: #080808;
+  color: #c2c2c2;
+  text-decoration: underline;
 }
 
 .nav-border-b {
-    border-bottom: 1px solid #322e2d;
+  border-bottom: 1px solid #322e2d;
 }
 
 .search-icon {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 #search-input {
-    padding: 8px 8px 8px 34px;
-    background-color: #080808;
-    border: 1px solid #322e2d;
-    outline: none;
-    color: #f3f3f3;
+  padding: 8px 8px 8px 34px;
+  background-color: #080808;
+  border: 1px solid #322e2d;
+  outline: none;
+  color: #f3f3f3;
 }
 
 #search-input:focus {
-    border: 1px solid #f3f3f3;
+  border: 1px solid #f3f3f3;
 }
 
 .fa-search-input {
-    color: #f3f3f3;
-    position: absolute;
-    margin: 14px 0px 0px 10px;
+  color: #f3f3f3;
+  position: absolute;
+  margin: 14px 0px 0px 10px;
 }
 
 #search-input::placeholder {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .dropdown-container {
-    width: 180px;
+  width: 180px;
 }
 
 #username {
-    font-size: 15px;
-    margin-top: 13px;
+  font-size: 15px;
+  margin-top: 13px;
 }
 
 /*************************************************/
 
 /* Homepage Styling */
 
-h1, h2, h3{
-    color: #fff;
+h1,
+h2,
+h3 {
+  color: #fff;
 }
 
-.shows-row{
-    overflow: scroll hidden;
-    white-space: nowrap;
-    padding: 6px 0px;
+.shows-row {
+  overflow: scroll hidden;
+  white-space: nowrap;
+  padding: 6px 0px;
 }
 
-.show-wrapper{
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
+.show-wrapper {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
 }
 
-.show-content{
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.8);
-    opacity: 0;
-    transform: translateY(100px);
-    transition: transform 0.5s ease, opacity 0.25s ease;
+.show-content {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 0.5s ease, opacity 0.25s ease;
 }
 
-.show-wrapper:hover .show-content{
-    opacity: 1;
-    transform: translateY(0);
+.show-wrapper:hover .show-content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.show-content p{
-    color: #fff;
+.show-content p {
+  color: #fff;
 }
 
-.show-content button{
-    border:none;
-    border-radius: 4px;
-    background-color: #e01214;
-    color: #fff;
-    padding: 4px 10px;;
-    letter-spacing: 1px;
-    font-size: 0.8rem;
-    transition: background-color 0.25s ease;
+.show-content button {
+  border: none;
+  border-radius: 4px;
+  background-color: #e01214;
+  color: #fff;
+  padding: 4px 10px;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  transition: background-color 0.25s ease;
 }
 
-.show-content button:hover{
-    background-color: #a80e10;
+.show-content button:hover {
+  background-color: #a80e10;
 }
 
-.show-content .fa-play{
-    font-size: 0.7rem;
+.show-content .fa-play {
+  font-size: 0.7rem;
 }
 
-#main select{
-    background: transparent;
-    padding: 10px;
-    color: #fff;
+#main select {
+  background: transparent;
+  padding: 10px;
+  color: #fff;
 }
 
-#main select:active{
-    outline: none;
+#main select:active {
+  outline: none;
 }
 
-#main select:focus{
-    outline: none;
+#main select:focus {
+  outline: none;
 }
 
-#main select > option{
-    background: #141414;
+#main select > option {
+  background: #141414;
 }
 
-#main option:hover{
-    background-color: transparent !important;
+#main option:hover {
+  background-color: transparent !important;
 }
 
-#main .btn-group button{
-    background-color: transparent;
-    border-radius: 0px;
-    padding: 10px 25px;
+#main .btn-group button {
+  background-color: transparent;
+  border-radius: 0px;
+  padding: 10px 25px;
 }
 
-#main .btn-group button:hover{
-    border-color: rgba(255, 255, 255, 0.671);
-    background-color: rgba(255,255,255,0.1);
+#main .btn-group button:hover {
+  border-color: rgba(255, 255, 255, 0.671);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /*************************************************/
@@ -223,62 +225,60 @@ h1, h2, h3{
 
 /*************************************************/
 
-
 /* Dashboard Styles */
 
-.dashboard-panel{
-    background-color: #ffffff0e;
-    border-radius: 8px;
-    padding: 30px;
+.dashboard-panel {
+  background-color: #ffffff0e;
+  border-radius: 8px;
+  padding: 30px;
 }
 
-#dashboard select{
-    padding: 6px;
-    border-radius: 4px;
+#dashboard select {
+  padding: 6px;
+  border-radius: 4px;
 }
 
-#dashboard label{
-    color: #fff;
+#dashboard label {
+  color: #fff;
 }
 
-#dashboard small{
-    color: #ff575a;
+#dashboard small {
+  color: #8a8a8a;
 }
 
-#dashboard table{
-    background-color: transparent;
-    margin: 0;
+#dashboard table {
+  background-color: transparent;
+  margin: 0;
 }
 
-#dashboard button{
-    border: none;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: background-color 0.25s ease;
+#dashboard button {
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.25s ease;
 }
 
-#dashboard .btn-edit{
-    background-color: #bb9c35;
+#dashboard .btn-edit {
+  background-color: #bb9c35;
 }
 
-#dashboard .btn-edit:hover{
-    background-color: #997c1e;
+#dashboard .btn-edit:hover {
+  background-color: #997c1e;
 }
 
-
-#dashboard .btn-delete{
-    background-color: #c23f41;
+#dashboard .btn-delete {
+  background-color: #c23f41;
 }
 
-#dashboard .btn-delete:hover{
-    background-color: #a72b2d;
+#dashboard .btn-delete:hover {
+  background-color: #a72b2d;
 }
 
-#dashboard .table td, .table th{
-    vertical-align: middle;
+#dashboard .table td,
+.table th {
+  vertical-align: middle;
 }
-
 
 /*************************************************/
