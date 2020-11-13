@@ -108,7 +108,10 @@ a:hover {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   color: #fff;
 }
 
@@ -121,17 +124,17 @@ h3 {
 .show-wrapper {
   display: inline-block;
   position: relative;
-  overflow: hidden;
 }
 
 .show-content {
   position: absolute;
-  top: 60%;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
+
   transform: translateY(100px);
   transition: transform 0.5s ease, opacity 0.25s ease;
 }
@@ -142,7 +145,14 @@ h3 {
 }
 
 .show-content p {
-  color: #fff;
+  color: rgb(148, 148, 148);
+  font-size: 0.8rem;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-bottom: 10px;
+  padding-right: 20px;
 }
 
 .show-content button {
