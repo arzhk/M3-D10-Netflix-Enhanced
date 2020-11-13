@@ -233,6 +233,10 @@ h3 {
   padding: 30px;
 }
 
+.dashboard-panel.full-height {
+  height: 100%;
+}
+
 #dashboard select {
   padding: 6px;
   border-radius: 4px;
@@ -253,32 +257,36 @@ h3 {
 
 #dashboard button {
   border: none;
-  color: #fff;
   padding: 5px 10px;
   border-radius: 4px;
   font-size: 0.9rem;
   transition: background-color 0.25s ease;
 }
 
-#dashboard .btn-edit {
-  background-color: #bb9c35;
-}
-
-#dashboard .btn-edit:hover {
-  background-color: #997c1e;
-}
-
-#dashboard .btn-delete {
-  background-color: #c23f41;
-}
-
-#dashboard .btn-delete:hover {
-  background-color: #a72b2d;
-}
-
 #dashboard .table td,
 .table th {
   vertical-align: middle;
+}
+
+#dashboard .modal-content {
+  background-color: #322e2d;
+}
+
+#dashboard .modal-header {
+  border: none;
+  color: #e74548;
+}
+
+#dashboard .modal-title {
+  font-size: 2rem;
+}
+
+#dashboard .modal-footer {
+  border: none;
+}
+
+#dashboard textarea {
+  border-radius: 6px;
 }
 
 /*************************************************/
