@@ -150,11 +150,12 @@ function dashboard_loadSummaryTable(array) {
             <td>${e.category}</td>
             <td>${e._id}</td>
             <td class="text-right">
-            <button class="btn btn-warning d-inline-block mr-2">Edit</button>
-            <button class="btn btn-danger">Delete</button>
+            <button id="edit-this-element" class="btn btn-secondary d-inline-block mr-2" disabled>Edit</button>
+            <button id="delete-this-element" class="btn btn-danger">Delete</button>
         </td>`;
 
       tableContainer.appendChild(newTableItem);
+      newTableItem.querySelector("#delete-this-element").addEventListener("click", () => removeShowData(e._id));
     });
   });
 }
