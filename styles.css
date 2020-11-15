@@ -132,13 +132,19 @@ h6 {
 
 .show-content {
   position: absolute;
-  top: 0;
+  top: 40px;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  opacity: 0;
-  transform: translateY(100px);
+  background: rgb(26, 26, 26);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.781) 64%,
+    rgba(0, 0, 0, 0.555) 82%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transform: translateY(96px);
   transition: transform 0.35s ease, opacity 0.25s ease;
 }
 
@@ -149,7 +155,6 @@ h6 {
 }
 
 .show-wrapper:hover .show-content {
-  opacity: 1;
   transform: translateY(0);
 }
 
