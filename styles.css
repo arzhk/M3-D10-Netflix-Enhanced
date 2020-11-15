@@ -300,3 +300,61 @@ h6 {
 }
 
 /*************************************************/
+
+/* Footer Styles */
+
+footer {
+  width: 100%;
+  background-color: #121212;
+  padding: 50px 50px 40px 50px;
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer ul li {
+  padding: 6px 0px;
+}
+
+footer ul li a {
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.25s ease;
+}
+
+footer ul li a:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+footer button {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+  transition: color 0.25s ease, border 0.25s ease;
+}
+
+footer button:hover {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+footer i {
+  color: rgba(255, 255, 255, 0.4);
+  margin-right: 20px;
+  font-size: 1.6rem;
+  transition: color 0.25s ease;
+}
+
+footer i:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/*************************************************/
