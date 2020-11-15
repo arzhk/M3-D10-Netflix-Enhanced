@@ -124,6 +124,10 @@ h6 {
 .show-wrapper {
   display: inline-block;
   position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 200px;
+  border-radius: 4px;
 }
 
 .show-content {
@@ -134,9 +138,14 @@ h6 {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
-
   transform: translateY(100px);
-  transition: transform 0.5s ease, opacity 0.25s ease;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+.show-img {
+  width: 100%;
+  position: relative;
+  top: -50%;
 }
 
 .show-wrapper:hover .show-content {
@@ -151,8 +160,11 @@ h6 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   padding-bottom: 10px;
-  padding-right: 20px;
 }
 
 .show-content button {
@@ -205,6 +217,16 @@ h6 {
 #main .btn-group button:hover {
   border-color: rgba(255, 255, 255, 0.671);
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 1200px) {
+  #main .container,
+  #main .container-lg,
+  #main .container-md,
+  #main .container-sm,
+  #main .container-xl {
+    max-width: 1400px !important;
+  }
 }
 
 /*************************************************/
@@ -297,12 +319,31 @@ h6 {
 
 #dashboard textarea {
   border-radius: 6px;
+  padding-left: 10px;
 }
 
 #dashboard input:disabled {
   background-color: rgb(85, 85, 85);
   color: #141414;
   border: none;
+}
+
+#dashboard .filter-select {
+  border-radius: 2px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.4);
+  transition: border 0.25s ease, color 0.25s ease;
+  width: 18%;
+}
+
+#dashboard .filter-select:hover {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#dashboard .filter-select option {
+  color: #322e2d;
 }
 
 /*************************************************/
