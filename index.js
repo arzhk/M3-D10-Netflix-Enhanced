@@ -139,16 +139,14 @@ const updateShowData = async (id) => {
   }
 };
 
-function fetchAllMovies() {
+async function fetchAllMovies() {
   let promiseArray = [];
 
   allGenres.forEach((e) => {
     promiseArray.push(fetchShowData(e));
   });
 
-  return Promise.all(promiseArray).then((result) => {
-    allMovies = result.flat();
-  });
+  allMovies = (await Promise.all(promiseArray)).flat();
 }
 
 function dashboard_loadSummaryTable(array) {
@@ -199,6 +197,25 @@ async function loadModal(e) {
   }
 
   isFirstEdit = false;
+}
+
+function findGenre() {
+  const editIDBox = document.querySelector("#inputShowID-edit");
+  const genreBox = document.querySelector("#inputShowGenre-edit");
+
+  let holdIDValue = editIDBox.value.split("").filter(function (str) {
+    return /\S/.test(str);
+  });
+
+  editIDBox.value = holdIDValue.join("");
+
+  if (editIDBox.value.length > 0) {
+    allMovies.forEach((e) => {
+      if (editIDBox.value === e._id) {
+        genreBox.value = e.category;
+      }
+    });
+  }
 }
 
 function postNewShow(e) {

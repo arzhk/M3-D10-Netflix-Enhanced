@@ -125,14 +125,14 @@
                             <div class="form-group">
                                 <label for="inputShowID-edit">Show ID*</label>
                                 <input type="text" class="form-control mb-2" id="inputShowID-edit"
-                                    aria-describedby="showID" placeholder="Enter ID..." required>
+                                    aria-describedby="showID" placeholder="Enter ID..." onchange="findGenre()" required>
                                 <small>Paste ID from below table.</small>
                             </div>
                             <div class="form-group">
                                 <label for="inputShowGenre-edit">Show Genre*</label>
                                 <input type="text" class="form-control mb-2" id="inputShowGenre-edit"
-                                    aria-describedby="showGenre" placeholder="Enter Genre..." required>
-                                <small>Paste Genre from below table.</small>
+                                    aria-describedby="showGenre" required disabled>
+                                <small>This field will autofill after entering an ID.</small>
                             </div>
                             <button id="edit-btn" type="submit" class="btn btn-warning mt-3"
                                 onclick="loadModal(event)">Edit</button>

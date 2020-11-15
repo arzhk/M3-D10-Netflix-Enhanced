@@ -299,6 +299,12 @@ h6 {
   border-radius: 6px;
 }
 
+#dashboard input:disabled {
+  background-color: rgb(85, 85, 85);
+  color: #141414;
+  border: none;
+}
+
 /*************************************************/
 
 /* Footer Styles */
