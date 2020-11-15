@@ -2,12 +2,14 @@ const apiUrl = "https://striveschool-api.herokuapp.com/api/movies/";
 const authKey =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFiY2U0ZDRiY2RlMTAwMTc2MTZhOTciLCJpYXQiOjE2MDUwOTQ5ODksImV4cCI6MTYwNjMwNDU4OX0.SAQHytYdg6VnAaNjFVSw_dxa0O28-Ini5uk6aRjkN1U";
 let allGenres = [];
+let allMovies = [];
 let isFirstEdit = true;
 
 /* Fetch Data */
 const fetchShowData = async (endpoint) => {
   try {
     if (typeof endpoint === "string") {
+      // On any other fetch fetch by genre
       const response = await fetch(apiUrl + endpoint, {
         method: "GET",
         headers: {
@@ -17,6 +19,7 @@ const fetchShowData = async (endpoint) => {
       const data = await response.json();
       return data;
     } else {
+      // On first load fetch all genres and place into an array.
       const response = await fetch(apiUrl, {
         method: "GET",
         headers: {
@@ -25,6 +28,7 @@ const fetchShowData = async (endpoint) => {
       });
       const data = await response.json();
       allGenres = [...data];
+      allGenres.sort();
       return allGenres;
     }
   } catch (error) {
@@ -135,17 +139,26 @@ const updateShowData = async (id) => {
   }
 };
 
+function fetchAllMovies() {
+  let promiseArray = [];
+
+  allGenres.forEach((e) => {
+    promiseArray.push(fetchShowData(e));
+  });
+
+  return Promise.all(promiseArray).then((result) => {
+    allMovies = result.flat();
+  });
+}
+
 function dashboard_loadSummaryTable(array) {
   const tableContainer = document.querySelector("#summary-table-body");
 
   tableContainer.innerHTML = "";
 
-  array.forEach(async (e) => {
-    const data = await fetchShowData(e);
-
-    data.forEach((e) => {
-      const newTableItem = document.createElement("tr");
-      newTableItem.innerHTML = `
+  allMovies.forEach((e) => {
+    const newTableItem = document.createElement("tr");
+    newTableItem.innerHTML = `
         <th scope="row">${e.name}</th>
             <td>${e.category}</td>
             <td>${e._id}</td>
@@ -154,14 +167,12 @@ function dashboard_loadSummaryTable(array) {
             <button id="delete-this-element" class="btn btn-danger">Delete</button>
         </td>`;
 
-      tableContainer.appendChild(newTableItem);
-      newTableItem.querySelector("#delete-this-element").addEventListener("click", () => removeShowData(e._id));
-    });
+    tableContainer.appendChild(newTableItem);
+    newTableItem.querySelector("#delete-this-element").addEventListener("click", () => removeShowData(e._id));
   });
 }
 
 function setModalData(show) {
-  console.log(show);
   document.querySelector("#modal-show-name").value = show[0].name;
   document.querySelector("#modal-show-description").value = show[0].description;
   document.querySelector("#modal-show-genre").value = show[0].category;
@@ -204,5 +215,6 @@ function deleteShow(e) {
 
 const startDashboard = async () => {
   await fetchShowData();
+  await fetchAllMovies();
   dashboard_loadSummaryTable(allGenres);
 };
